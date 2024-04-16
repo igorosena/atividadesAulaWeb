@@ -35,14 +35,14 @@ async function getPokemonData(name) {
 }
 
 function getSearchParams() {
-  // Early return -> Caso location search, não faz nada.
+  
   if (!location.search) {
     return;
   }
-  // URLSearchParams é uma classe que facilita a manipulação de query strings
+
   const urlSearchParams = new URLSearchParams(location.search);
   
-  // Pegando o valor do parâmetro name
+  
   const pokemonName = urlSearchParams.get('name');
   
   changePageTitle(`Pagina do ${pokemonName}`);
