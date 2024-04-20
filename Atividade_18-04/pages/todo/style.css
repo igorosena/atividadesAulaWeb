@@ -1,0 +1,125 @@
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li,
+figure,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+ul li {
+    list-style-position: inside;
+  }
+
+  header {
+    background-color:#333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .tarefaContainer{
+    display:grid;
+    place-items: center;
+  
+  }
+
+  #meuForm {
+    display: grid;
+    gap:3px;
+    margin: 20px;
+    place-items: center;
+}
+
+#tarefa {
+  width: 70%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#meuForm button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0074d9;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  height: 30px;
+}
+
+#tarefa:focus {
+  border-color: #5c67f2;
+  box-shadow: 0 0 8px rgba(92, 103, 242, 0.5);
+}
+
+#meuForm button:hover {
+  background-color: #4a50e0;
+}
+
+
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
+  footer a[href*='#'] {
+    color: white;
+  }
+  
+  footer a[href*='mailto'] {
+    color: orangered;
+  }
+  
+  footer a[href*='tel'] {
+    color: limegreen;
+  }
+  
+  footer a[href]:hover {
+    opacity: 0.8;
+  }

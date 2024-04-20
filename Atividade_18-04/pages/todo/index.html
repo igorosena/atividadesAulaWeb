@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="../pokemon/index.js"></script>
+
+    
+</head>
+<body>
+    <header id="header">
+        <a href="./index.html">
+            <h1>TO-DO LIST</h1>
+        </a>
+    </header>
+    <main>
+        <section id="to-do-list">
+        </section>
+
+       <div class="tarefaContainer">
+        <form id="meuForm">
+            <input type="text" id="tarefa" placeholder="Digite a tarefa">
+            <button type="submit">Enviar</button>
+        </form>
+       </div>
+    </main>
+
+    <footer aria-label="Rodapé">
+        <p aria-label="Copyright">
+          &copy; 2024 Todos os direitos reservados.
+        </p>
+       
+      </footer>
+      <script>
+          document.getElementById('meuForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+    
+
+        let novaTarefa = document.getElementById('tarefa').value;
+
+        let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+
+        tarefas.push(novaTarefa);
+        
+        localStorage.setItem('tarefas', JSON.stringify(tarefas));
+        updateTaskList();
+
+        });
+    
+    function updateTaskList(){
+        const main = document.querySelector('#to-do-list');
+        main.innerHTML = '';
+
+        let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+        tarefas.forEach(tarefa =>{
+            const paragrafo = document.createElement('p');
+            paragrafo.textContent = tarefa;
+            main.appendChild(paragrafo)
+        })
+    }
+
+    document.addEventListener('DOMContentLoaded', updateTaskList);
+      </script>
+</body>
+</html>
